@@ -8,7 +8,24 @@ import java.lang.annotation.Target;
 @Target(ElementType.ANNOTATION_TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Rule {
+    /**
+     * Message on validation failure.
+     *
+     * @return The fail message.
+     */
     String message();
+
+    /**
+     * The rule to validate.
+     *
+     * @return THe rule.
+     */
     Class<? extends AbstractRule> rule();
+
+    /**
+     * The parameters to parse to the rule constructor.
+     *
+     * @return The parameters.
+     */
     String[] parameters() default {};
 }
