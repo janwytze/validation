@@ -61,7 +61,7 @@ public class Validator {
      */
     private void validateField(Field field) throws FieldFailedException {
         Validate validateAnnotation = field.getAnnotation(Validate.class);
-        List<String> messages = new ArrayList<String>();
+        List<String> messages = new ArrayList<>();
 
         for (Rule rule: validateAnnotation.rules()) {
             try {
